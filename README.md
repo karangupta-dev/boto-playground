@@ -47,13 +47,14 @@ jupyter notebook
 
 Open and run:
 
-- `api_request.ipynb` - sends one question to Bedrock
+- `0_basic_api_request/api_request.ipynb` - sends one question to Bedrock
 - `1_multi_turn_conversation/conversation.ipynb` - sends a short conversation
 
 Choose the `boto-playground` Python kernel if Jupyter asks.
 
 ## Files
 
-- `api_request.ipynb` - basic Bedrock API example
+- `0_basic_api_request/api_request.ipynb` - basic Bedrock API example
 - `1_multi_turn_conversation/conversation.ipynb` - multi-turn chat example
+- `bedrock_config.py` - shared Bedrock client and model configuration
 - `util.py` - simple message and chat helper functions

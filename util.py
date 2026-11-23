@@ -1,3 +1,6 @@
+import bedrock_config
+
+
 def add_user_message(messages, text):
     user_message = {
         "role": "user",
@@ -17,8 +20,8 @@ def add_assistant_message(messages, text):
     messages.append(assistant_message)
 
 def chat(messages):
-    response = client.converse(
-        modelId=model_id,
+    response = bedrock_config.client.converse(
+        modelId=bedrock_config.model_id,
         messages=messages
     )
     return response["output"]["message"]["content"][0]["text"]
