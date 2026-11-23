@@ -19,9 +19,13 @@ def add_assistant_message(messages, text):
     }
     messages.append(assistant_message)
 
-def chat(messages):
-    response = bedrock_config.client.converse(
-        modelId=bedrock_config.model_id,
-        messages=messages
-    )
+def chat(messages, system_prompt=""):
+    request = {
+        "modelId": bedrock_config.model_id,
+        "messages": messages
+    }
+    if system_prompt:
+        request["system"] = [{"text": system_prompt}]
+
+    response = bedrock_config.client.converse(**request)
     return response["output"]["message"]["content"][0]["text"]
